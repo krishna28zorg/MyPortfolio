@@ -8,6 +8,9 @@ import Link from '@/components/navigation/link';
 import Tag from '@/components/data-display/tag';
 import Card from '@/components/layout/card';
 
+// ✅ Import fallback image
+import FallbackImage from '@/public/images/fallback.png';
+
 type ProjectDetailsProps = ProjectDetailsType & {
   layoutType: 'default' | 'reverse';
 };
@@ -20,6 +23,8 @@ const ProjectDetails = ({
   previewImage,
   layoutType = 'default',
 }: ProjectDetailsProps) => {
+  const imageSrc = previewImage ?? FallbackImage;
+
   return (
     <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row">
       {/* Image */}
@@ -34,7 +39,7 @@ const ProjectDetails = ({
         {urls?.[0]?.url ? (
           <Link noCustomization href={urls[0].url} externalLink>
             <Image
-              src={previewImage}
+              src={imageSrc}
               alt={`${name} preview`}
               className="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
               style={{ objectFit: 'cover' }}
@@ -42,7 +47,7 @@ const ProjectDetails = ({
           </Link>
         ) : (
           <Image
-            src={previewImage}
+            src={imageSrc}
             alt={`${name} preview`}
             className="rounded-xl shadow-lg"
             style={{ objectFit: 'cover' }}
