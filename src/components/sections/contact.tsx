@@ -96,7 +96,7 @@ const ContactSection = () => {
 <div className="flex flex-col items-center gap-2 mt-8">
   <Typography className="text-center">Scan to visit my portfolio</Typography>
   <QRCodeCanvas
-    value="https://kshitij-portfolio.vercel.app" // Replace with your actual URL
+    value="https://my-portfolio-1fb1ipkrn-kshitijs-projects-92393bd8.vercel.app" // Replace with your actual URL
     size={128}
     fgColor="#000000"
     bgColor="#ffffff"
