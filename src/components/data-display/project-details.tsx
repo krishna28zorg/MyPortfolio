@@ -74,7 +74,8 @@ const ProjectDetails = ({
           ))}
         </div>
 
-        {urls?.length > 0 && (
+        {Array.isArray(urls) && urls.length > 0 && (
+
           <div className="flex flex-col gap-2">
             {urls.map((link, idx) => (
               <Link
